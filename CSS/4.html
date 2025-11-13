@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>
+      CSS - Apply Different Style (Color, Background Color) on Even and Odd
+      Table Rows.
+    </title>
+    <style>
+      .tableStyle1 {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: auto;
+      }
+      .tableStyle1 th {
+        text-align: left;
+        background-color: #006699;
+        color: #fff;
+        text-align: left;
+        padding: 25px;
+      }
+      .tableStyle1 td,
+      .tableStyle1 th {
+        border: 1px solid #dedede;
+        padding: 15px;
+      }
+      .tableStyle1 tr:nth-child(even) {
+        background-color: #afafaf;
+      }
+      .tableStyle1 tr:nth-child(odd) {
+        background-color: #cfcfcf;
+      }
+      .tableStyle1 tr:hover {
+        background-color: #e5423f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      CSS - Apply Different Style (Color, Background Color) on Even and Odd
+      Table Rows.
+    </h1>
+    <table class="tableStyle1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Mike</td>
+        <td>23</td>
+        <td>Male</td>
+        <td>USA</td>
+      </tr>
+      <tr>
+        <td>Mohit</td>
+        <td>28</td>
+        <td>Male</td>
+        <td>India</td>
+      </tr>
+      <tr>
+        <td>James</td>
+        <td>31</td>
+        <td>Male</td>
+        <td>Canada</td>
+      </tr>
+      <tr>
+        <td>Rossy</td>
+        <td>32</td>
+        <td>Female</td>
+        <td>South Africa</td>
+      </tr>
+    </table>
+  </body>
+</html>

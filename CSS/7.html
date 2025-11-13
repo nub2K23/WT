@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .sprite {
+        width: 100px;
+        height: 100px;
+        background-image: url("devices.png");
+        background-repeat: no-repeat;
+        background-size: 299px 168px; /* Adjust to fit your actual image size */
+        border-radius: 10px;
+        border: 3px solid #ccc;
+      }
+
+      .html {
+        background-position: -4px -30px;
+      }
+
+      .css {
+        background-position: -86px -30px;
+      }
+
+      .bootstrap {
+        background-position: -185px -30px;
+      }
+
+      img {
+        height: 100px;
+        width: auto;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Original Image</h3>
+    <img src="devices.png" alt="Sprite Source" />
+
+    <h3>Image Sprites</h3>
+    <div class="main">
+      <div class="sprite html"></div>
+      <div class="sprite css"></div>
+      <div class="sprite bootstrap"></div>
+    </div>
+  </body>
+</html>

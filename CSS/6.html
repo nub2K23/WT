@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Pseudo-class Example</title>
+    <style>
+      /* Link states */
+      a:link {
+        color: blue;
+      }
+      a:visited {
+        color: purple;
+      }
+      a:hover {
+        color: red;
+
+        text-decoration: underline;
+      }
+      a:active {
+        color: green;
+      }
+      /* Input focus */
+      input:focus {
+        background-color: yellow;
+      }
+      /* First and last child */
+      p:first-child {
+        color: orange;
+      }
+      p:last-child {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS Pseudo-class Example</h2>
+    <a href="#">Hover over this link</a><br /><br />
+    <input type="text" placeholder="Click here to focus" /><br /><br />
+    <div>
+      <p>This is the first paragraph.</p>
+      <p>This is the second paragraph.</p>
+      <p>This is the last paragraph.</p>
+    </div>
+  </body>
+</html>
