@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reverse Number</title>
+    <script>
+      function reverseNumber() {
+        let num = parseInt(document.getElementById("inputNum").value);
+        let reverse = 0;
+        while (num > 0) {
+          let remainder = num % 10;
+          reverse = reverse * 10 + remainder;
+          num = Math.floor(num / 10);
+        }
+        document.getElementById(
+          "output"
+        ).innerHTML = `Reversed Number: <strong>${reverse}</strong>`;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Reverse a Number</h2>
+    <form onsubmit="event.preventDefault(); reverseNumber();">
+      <label>Enter Number:</label>
+      <input type="number" id="inputNum" required />
+      <button type="submit">Reverse</button>
+    </form>
+    <p id="output"></p>
+  </body>
+</html>

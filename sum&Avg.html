@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sum and Average of Digits</title>
+    <script>
+      function processDigits() {
+        const inputVal = document.getElementById("numInput").value;
+        const numStr = Math.abs(inputVal).toString();
+        let sum = 0;
+        for (let i = 0; i < numStr.length; i++) {
+          sum += parseInt(numStr[i]);
+        }
+        const avg = sum / numStr.length;
+        document.getElementById(
+          "output"
+        ).innerHTML = `Sum: <strong>${sum}</strong> <br> Average: <strong>${avg.toFixed(
+          2
+        )}</strong>`;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Digit Calculator</h2>
+    <form onsubmit="event.preventDefault(); processDigits();">
+      <label>Enter a number:</label>
+      <input type="number" id="numInput" required />
+      <button type="submit">Calculate</button>
+    </form>
+    <p id="output"></p>
+  </body>
+</html>
