@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+      input,
+      select,
+      textarea {
+        width: 250px;
+        padding: 6px;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      textarea {
+        height: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Student Information Form</h2>
+    <form id="infoForm" onsubmit="return false;">
+      <label>Name:</label>
+      <input type="text" id="name" />
+      <span id="nameError" class="error"></span>
+
+      <label>Email:</label>
+      <input type="text" id="email" />
+      <span id="emailError" class="error"></span>
+
+      <label>Mobile Number:</label>
+      <input type="text" id="mobile" />
+      <span id="mobileError" class="error"></span>
+
+      <label>Gender:</label>
+      <select id="gender">
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <span id="genderError" class="error"></span>
+
+      <label>Favorite Colour:</label>
+      <input type="color" id="color" />
+      <span id="colorError" class="error"></span>
+
+      <button onclick="combineInfo()">Submit</button>
+    </form>
+
+    <h3>Combined Information:</h3>
+    <textarea id="output"></textarea>
+
+    <script>
+      function validate() {
+        let valid = true;
+
+        document.getElementById("nameError").innerHTML = "";
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("mobileError").innerHTML = "";
+        document.getElementById("genderError").innerHTML = "";
+        document.getElementById("colorError").innerHTML = "";
+
+        let name = document.getElementById("name").value.trim();
+        if (name === "") {
+          document.getElementById("nameError").innerText = "Name is required";
+          valid = false;
+        }
+
+        let email = document.getElementById("email").value.trim();
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerText = "Enter a valid email";
+          valid = false;
+        }
+
+        let mobile = document.getElementById("mobile").value.trim();
+        let mobilePattern = /^[0-9]{10}$/;
+        if (!mobilePattern.test(mobile)) {
+          document.getElementById("mobileError").innerText =
+            "Enter 10 digit mobile number";
+          valid = false;
+        }
+
+        let gender = document.getElementById("gender").value;
+        if (gender === "") {
+          document.getElementById("genderError").innerText = "Select gender";
+          valid = false;
+        }
+
+        let color = document.getElementById("color").value;
+        if (color === "") {
+          document.getElementById("colorError").innerText = "Choose a colour";
+          valid = false;
+        }
+
+        return valid;
+      }
+
+      function combineInfo() {
+        if (validate()) {
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let mobile = document.getElementById("mobile").value;
+          let gender = document.getElementById("gender").value;
+          let color = document.getElementById("color").value;
+
+          let output =
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Mobile: " + mobile + "\n" +
+            "Gender: " + gender + "\n" +
+            "Favourite Colour: " + color;
+
+          document.getElementById("output").value = output;
+        } else {
+          document.getElementById("output").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

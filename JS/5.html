@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Clock</title>
+    <script language="JavaScript">
+      function fun() {
+        let obj = new Date();
+        let h = obj.getHours();
+        let m = obj.getMinutes();
+        let s = obj.getSeconds();
+        document.myform.Hrs.value = h + " Hours";
+        document.myform.Min.value = m + " Minutes";
+        document.myform.Sec.value = s + " Seconds";
+      }
+      window.setInterval(fun, 10);
+      function hr() {
+        var nam = prompt("Enter your Name, Please: ");
+        alert("Hello!, " + nam);
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <img
+        src="logo.jpg"
+        alt="PROGRAM CREATED BY BCA DEPARTMENT RAJDHANI COLLGE BHUBANESWAR"
+        title="PROGRAM CREATED BY BCA DEPARTMENT RAJDHANI COLLGE BHUBANESWAR"
+      />
+      <form name="myform">
+        <input type="text" id="Hrs" title="Hours" onClick="hr()" />
+        <input type="text" id="Min" title="Minutes" />
+        <input type="text" id="Sec" title="Seconds" />
+      </form>
+    </center>
+  </body>
+</html>

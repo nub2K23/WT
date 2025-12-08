@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Login Validation</title>
+    <script language="javascript">
+      function formValidator() {
+        var username = document.getElementById("uname");
+        var password = document.getElementById("pwd");
+        if (isEmpty(username) && isEmpty(password)) {
+          alert("enter something");
+          document.form1.uname.focus();
+        }
+        if (!isEmpty(username) && isEmpty(password) && isAlphabet(username)) {
+          alert("Please enter password");
+          document.form1.pwd.focus();
+        }
+        if (!isEmpty(username) && !isEmpty(password) && isAlphabet(username)) {
+          return true;
+        } else {
+          if (
+            !isEmpty(username) &&
+            !isEmpty(password) &&
+            !isAlphabet(username)
+          ) {
+            alert("Please Enter only alphabets for username");
+            document.form1.uname.focus();
+          }
+        }
+        return false;
+      }
+      function isEmpty(elem) {
+        if (elem.value.length == 0) {
+          return true;
+        }
+        return false;
+      }
+      function isAlphabet(elem) {
+        var alphaExp = /^[a-z A-Z]+$/;
+        if (elem.value.match(alphaExp)) {
+          return true;
+        }
+      }
+    </script>
+  </head>
+  <body bgcolor="megastar">
+    <h1 align="center">USER LOGIN VALIDATION</h1>
+    <br /><br />
+    <form name="form1" onsubmit="return formValidator()">
+      <center>
+        <table border="0" colsspacing="4">
+          <tr>
+            <td>Username:</td>
+            <td><input type="text" value="" name="uname" /></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" value="" name="pwd" /></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="SUBMIT" name="btn1" /></td>
+            <td><input type="reset" value="CANCEL" name="btn2" /></td>
+          </tr>
+        </table>
+      </center>
+    </form>
+  </body>
+</html>
