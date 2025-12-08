@@ -114,12 +114,3 @@ If this lab is part of coursework, contributions may be restricted. Otherwise, f
 ## **📜 License**
 
 This lab project is for educational use. You may modify and extend it as needed.
-
----
-
-If you'd like, I can also generate:
-✔ A more formal academic version
-✔ A shorter/longer version
-✔ A version describing your specific files
-
-Just tell me!
