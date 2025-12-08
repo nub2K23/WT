@@ -1,7 +1,3 @@
-Below is a clean, well-structured **README.md** you can drop into a lab folder containing HTML, CSS, JS, and PHP code. If you want it customized to a specific project name or instructions, just tell me!
-
----
-
 # **Lab Project – HTML, CSS, JavaScript & PHP**
 
 This repository contains a lab exercise demonstrating the integration of **front-end** (HTML, CSS, JavaScript) and **back-end** (PHP) web technologies. The code in this folder is intended to help you understand how these components work together to build a functional web application.
